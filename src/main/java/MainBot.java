@@ -1,3 +1,4 @@
+import bot_data.BotsData;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
@@ -14,13 +15,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Bot extends TelegramLongPollingBot {
+public class MainBot extends TelegramLongPollingBot {
 
     public static void main(String[] args) {
         ApiContextInitializer.init();
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
         try {
-            telegramBotsApi.registerBot(new Bot());
+            telegramBotsApi.registerBot(new MainBot());
         } catch (TelegramApiRequestException e) {
             e.printStackTrace();
         }
@@ -81,10 +82,10 @@ public class Bot extends TelegramLongPollingBot {
     }
 
     public String getBotUsername() {
-        return "Baet";
+        return BotsData.botName;
     }
 
     public String getBotToken() {
-        return "1709653315:AAHSJIANh78q5cSKJ05-1FQfQZOdu_eIcFU";
+        return BotsData.botToken;
     }
 }

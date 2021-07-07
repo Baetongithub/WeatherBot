@@ -82,7 +82,7 @@ public class MainBot extends TelegramLongPollingBot {
     }
 
     public String getBotUsername() {
-        return BotsData.botName;
+        return "Baet";
     }
 
     public String getBotToken() {
